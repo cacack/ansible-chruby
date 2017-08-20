@@ -1,11 +1,18 @@
 ---
-- file: path=/opt/build state=directory
 
-- include: 10-chruby.yml
+- name: Ensure build directory exists
+  file:
+    path:  "{{ chruby_build_path }}"
+    state: directory
+
+- include: chruby-install.yml
   tags:    ansible-chruby
-- include: 20-ruby-install.yml
+
+- include: ruby-install.yml
   tags:    ansible-chruby
-- include: 30-ruby.yml
+
+- include: ruby-config.yml
   tags:    ansible-chruby
-- include: 40-remove_outdated_rubies.yml
+
+- include: remove_old_rubies.yml
   tags:    ansible-chruby
