@@ -12,7 +12,7 @@
 
 - name: Download chruby
   get_url:
-    url: "https://github.com/postmodern/chruby/archive/{{ chruby_chruby_version }}.tar.gz"
+    url: "{{ chruby_chruby_url }}"
     dest: "{{ chruby_build_path }}/chruby-{{ chruby_chruby_version }}.tar.gz"
     sha256sum: "{{ chruby_chruby_checksum }}"
   when: not chruby_exec.stat.exists
