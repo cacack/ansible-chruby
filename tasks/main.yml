@@ -5,16 +5,16 @@
     path:  "{{ chruby_build_path }}"
     state: directory
 
-- name: Include chruby-install
-  import_tasks: chruby-install.yml
+- name: Include chruby_install
+  import_tasks: chruby_install.yml
   tags: ansible-chruby
 
-- name: Include ruby-install
-  import_tasks: ruby-install.yml
+- name: Include ruby_install
+  import_tasks: ruby_install.yml
   tags: ansible-chruby
 
-- name: Include ruby-config
-  import_tasks: ruby-config.yml
+- name: Include ruby_config
+  import_tasks: ruby_config.yml
   tags: ansible-chruby
 
 - name: Include remove_old_rubies
